@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use or adapt the Context Sprint method, please cite it as below."
+title: "Context Sprint: Method Definition"
+type: software
+authors:
+  - family-names: Robert
+    given-names: Maike
+version: 1.0.0
+date-released: 2026-10-05
+license: CC-BY-4.0
+repository-code: "https://github.com/maikerobert/context-sprint"
+abstract: >-
+  Context Sprint is a product development method that takes a business need
+  from a meeting to production-ready interfaces, built in the company's own
+  design system and technical stack, with a human approval gate between every
+  step. An AI agent carries the company's full context (the Context Layer) and
+  produces each artifact; people decide at every gate. Central rule: speed
+  comes from context, not from the model.
+keywords:
+  - context sprint
+  - product development
+  - artificial intelligence
+  - design system
+  - prototyping
+  - human-in-the-loop
+  - methodology
