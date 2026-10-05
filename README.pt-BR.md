@@ -4,7 +4,7 @@
 
 Context Sprint é um método de desenvolvimento de produto que leva uma necessidade de negócio da reunião até interfaces prontas para publicar ou integrar ao sistema, construídas no design system e na stack da própria empresa, com uma aprovação humana entre cada etapa. Na prática, o protótipo navegável existe minutos depois do fim da reunião, e as telas ficam prontas no dia seguinte.
 
-O método se apoia em uma regra: **a velocidade vem do contexto, não do modelo.** Uma IA que não conhece a empresa produz telas genéricas, que precisam ser refeitas. Uma IA que carrega o design system, o playbook da marca, o histórico de telas e o jeito de a empresa funcionar produz telas que já nascem no padrão. O método não depende do modelo ou da ferramenta de IA que o time usa.
+A regra central do método: **a velocidade vem do contexto, não do modelo.** Uma IA que não conhece a empresa produz telas genéricas, que precisam ser refeitas. Uma IA que carrega o design system, o playbook da marca, o histórico de telas e o jeito de a empresa funcionar produz telas que já nascem no padrão. O método não depende do modelo ou da ferramenta de IA que o time usa.
 
 [Read in English](README.md)
 
@@ -25,6 +25,10 @@ Context Layer (etapa zero, montado uma vez e mantido atualizado)
 Reunião ─► Briefing ─[Gate 1]─► Protótipo ─[Gate 2]─► Build ─[Gate 3]─► Handoff ─[Gate 4]─► Integração / publicação
 ```
 
+## Uso no dia a dia
+
+O Context Sprint é um jeito de trabalhar, usado de forma contínua, assim como o Scrum ou o Kanban. Cada necessidade que aparece vira um Sprint, vários podem rodar ao mesmo tempo, e cada um alimenta o Context Layer, então o Sprint seguinte já começa com mais contexto do que o anterior. Ele se encaixa no modelo de entrega que o time já usa, inclusive dentro de uma sprint do Scrum. Os detalhes estão na [seção 6 do método](METHOD.md#6-continuous-practice) (em inglês).
+
 ## Quando usar
 
 O Context Sprint foi pensado para a **evolução** de produtos e sistemas que já existem: novas funcionalidades, ferramentas internas, telas que seguem um padrão já definido. Ele não serve para criar um produto do zero, quando ainda não existe padrão e o trabalho é justamente criá-lo. Nesse caso o design exploratório vem primeiro, e o Context Sprint entra quando o padrão existe e passa a fazer parte do Context Layer.
@@ -33,7 +37,7 @@ O Context Sprint foi pensado para a **evolução** de produtos e sistemas que j�
 
 | Caminho | Conteúdo |
 |---|---|
-| [`METHOD.md`](METHOD.md) | A especificação completa do método, versão 1.0 (em inglês) |
+| [`METHOD.md`](METHOD.md) | A especificação completa do método, versão 1.1 (em inglês) |
 | [`templates/context-layer/`](templates/context-layer/) | Estrutura inicial do Context Layer de uma empresa |
 | [`templates/briefing.md`](templates/briefing.md) | Modelo de briefing, preenchido a partir da transcrição da reunião |
 | [`templates/gates-checklist.md`](templates/gates-checklist.md) | O que cada Gate aprova e quem aprova |
@@ -41,11 +45,11 @@ O Context Sprint foi pensado para a **evolução** de produtos e sistemas que j�
 
 ## Autoria e citação
 
-O Context Sprint foi descrito por **Maike Robert** em outubro de 2026 (São Paulo, Brasil), a partir da prática em empresas de tecnologia.
+O Context Sprint foi criado e batizado por **Maike Robert** (São Paulo, Brasil) em outubro de 2026, a partir do jeito como ele conduz o desenvolvimento de produto com IA no dia a dia.
 
 Se você usar ou adaptar o método, cite assim:
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.0.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.1.0). https://github.com/maikerobert/context-sprint
 
 ## Licença
 

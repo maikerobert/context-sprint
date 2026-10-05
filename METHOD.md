@@ -1,6 +1,6 @@
 # Context Sprint: Method Definition
 
-Version 1.0.0, October 2026. Author: Maike Robert.
+Version 1.1.0, October 2026. Author: Maike Robert.
 
 ## 1. Definition
 
@@ -80,7 +80,36 @@ No step starts before the previous gate is passed. Gate 2 is where the most valu
 5. Interface in the repository.
 6. Context Layer update.
 
-## 6. Scope
+## 6. Continuous practice
+
+Context Sprint is meant to be used every day, all year, the same way a team uses Scrum or Kanban. A single Sprint takes one need from a meeting to production-ready interfaces; the practice is running a Sprint for every need that comes up and keeping the Context Layer current between them.
+
+### 6.1 Two rhythms
+
+| Part | Rhythm | What happens |
+|---|---|---|
+| Sprint | Once per need, often several in parallel | Briefing, prototype, build and handoff, each closed by its gate |
+| Context Layer | Continuous | Every Sprint adds screens, decisions and patterns, and the context keeper reviews it on a fixed cadence |
+
+The Sprints are where the work is delivered, and the Context Layer is where it accumulates. Each new screen enters the screen history, each decision taken at a gate enters the decision log, so the next Sprint starts from a richer context than the one before. The effect the method aims for is that each Sprint needs fewer changes at the gates than the previous one, because the agent already knows how the company solved similar problems.
+
+### 6.2 Recommended cadence
+
+1. **Intake.** Every new need becomes a Sprint candidate and is prioritized in the backlog the team already keeps.
+2. **Sprints.** One conductor can run more than one Sprint at a time, since most of the waiting happens at the gates. Limit the work in progress to what the approvers can actually review.
+3. **Context review.** Weekly, or at the end of each team iteration, the context keeper checks the Context Layer for outdated screens, decisions that changed and gaps found during the Sprints.
+4. **Retrospective.** At the same cadence, the team reads the gate log: which gates needed the most changes, and which missing context caused them. That context goes into the Context Layer.
+
+### 6.3 With Scrum and Kanban
+
+Context Sprint fits inside the delivery framework the team already uses.
+
+- **Scrum.** A Context Sprint can start and finish inside a single Scrum sprint. The need enters the backlog as an item; Briefing, Prototype and Build take the place of the wireframe, design and front-end tasks; Handoff delivers to the back-end tasks of the same or the next Scrum sprint. The word means different things in each: in Scrum a sprint is a fixed time box for the whole team, in Context Sprint it is the cycle of one need.
+- **Kanban.** Each step can be a column and each gate a column policy: an item moves on only after the named approver signs off.
+
+Back-end, data and infrastructure work keep the engineering team's own process. Context Sprint ends at the handoff.
+
+## 7. Scope
 
 **Use Context Sprint for evolution:** new features in existing products, internal tools, screens and flows that follow an established standard. In these cases the company wants speed inside its own standard, and the creativity that matters is solving the problem well, not inventing a new visual language.
 
@@ -88,7 +117,7 @@ No step starts before the previous gate is passed. Gate 2 is where the most valu
 
 This boundary also answers the most common objection, that the method replaces design. It replaces the repeated adaptation of screens to a standard that already exists. It depends on the people who create and maintain that standard.
 
-## 7. Comparison
+## 8. Comparison
 
 | | Design Sprint | Typical Agile cycle | Context Sprint |
 |---|---|---|---|
@@ -99,7 +128,7 @@ This boundary also answers the most common objection, that the method replaces d
 | Role of people | Create and decide | Create and decide | Decide at the gates |
 | Prerequisite | A team available for a week | A team | An existing Context Layer |
 
-## 8. Related work
+## 9. Related work
 
 Context Sprint builds on and differs from:
 
@@ -109,18 +138,18 @@ Context Sprint builds on and differs from:
 - **Context engineering** and **spec-driven development**: practices for feeding AI agents the right information. The Context Layer applies the same idea at the level of a whole company.
 - Practitioners have also described one-hour team exercises to write context documents with AI (for example, Allie K. Miller's "context engineering sprint", 2026). Exercises like these are a good way to run step zero, building the Context Layer.
 
-## 9. Origin
+## 10. Origin
 
 The method was formalized from a real case in a Brazilian technology company in 2026. Leadership needed a way to control expenses of directors and managers. The need was discussed in a meeting of less than one hour. Fifteen minutes after the meeting, a clickable prototype existed in the company's design system. The next day, the interfaces were in the product's stack, tested across devices, validated with users navigating them, and ready for back-end integration.
 
 Before, the same path took weeks: scheduling the wireframe in a sprint, validating it, handing it to UX to adapt to the design system, validating again, testing with users, then the front-end developer, and only then the back-end.
 
-## 10. Versioning
+## 11. Versioning
 
-This document follows semantic versioning. Changes are recorded in [CHANGELOG.md](CHANGELOG.md). Version 1.0.0 is the first public definition of the method.
+This document follows semantic versioning. Changes are recorded in [CHANGELOG.md](CHANGELOG.md). Version 1.0.0 was the first public definition of the method; 1.1.0 adds its use as a continuous practice.
 
 ## Citation
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.0.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.1.0). https://github.com/maikerobert/context-sprint
 
 Licensed under [CC BY 4.0](LICENSE).

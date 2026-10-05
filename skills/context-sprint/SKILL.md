@@ -5,7 +5,7 @@ description: Runs a Context Sprint, taking a business need from a meeting to pro
 
 # Context Sprint
 
-By Maike Robert. Method: [Context Sprint, v1.0](https://github.com/maikerobert/context-sprint/blob/main/METHOD.md) (CC BY 4.0). This skill: MIT License.
+By Maike Robert. Method: [Context Sprint, v1.1](https://github.com/maikerobert/context-sprint/blob/main/METHOD.md) (CC BY 4.0). This skill: MIT License.
 
 Context Sprint: AI with the company's full context, and people approving at every step.
 
@@ -47,7 +47,7 @@ Deliver for integration or launch: pull request with the briefing, the changes, 
 
 ## After the Sprint
 
-Update the Context Layer: add the new screens to the screen history and the new decisions to the decision log. Then fill the gate log (date, who approved, what changed) and show it to the user.
+Update the Context Layer: add the new screens to the screen history and the new decisions to the decision log. Then fill the gate log (date, who approved, what changed) and show it to the user. Each Sprint is one cycle of a continuous practice: what you add to the Context Layer now is what makes the next Sprint faster.
 
 ## Never
 
