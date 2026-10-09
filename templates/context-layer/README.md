@@ -12,5 +12,6 @@ Copy this folder into your knowledge base (a notes vault, a docs folder in a rep
 | `04-screens.md` | Every existing screen: name, purpose, users, where it lives |
 | `05-decisions.md` | Product decisions and the reasons behind them |
 | `06-stack.md` | Technologies, conventions, repository, how to run and test |
+| `07-governance.md` | What may go into the briefing, what may enter the Context Layer, what stays in the meeting |
 
 A company without a defined design system starts with a minimum one in `02-design-system.md` before running its first Sprint.
