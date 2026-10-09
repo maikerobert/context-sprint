@@ -36,10 +36,14 @@ Facts are the agent's job and decisions are the user's. Look up anything that ca
 
 **Output.** A summary that fits on one screen:
 
-- Problem and audience: who uses it and what they need to get done.
-- Goal and main conversion: what counts as success.
+- Who suffers from the problem, and when: who uses it and at which moment the problem shows up.
+- How it is done today, and what it costs.
+- How we will know it is solved: the success metric (today, target, when to check) and the success criteria, one per line, each checkable on the screen. They become the test script by role.
+- Scale of validation: Adjustment, Feature or Product (if Product, the journeys and their order).
+- Governance: apply the project's governance rule, if there is one, and keep out of the summary anything that stays in the meeting.
 - Scope: what is in and what is explicitly out.
 - Business rules and constraints.
+- Possible paths, when there is more than one; they become the prototype alternatives.
 - Page profile: public (site, landing page), private (dashboard, logged-in area, admin) or staging. It decides what the launch stage checks later.
 - Target: prototype only, the project's repository, or production.
 - Assumptions made to fill gaps, each one marked as an assumption.
@@ -68,6 +72,7 @@ The prototype answers one question: did the agent understand what the user imagi
 
 - Build it as static HTML, CSS and JS in separate files, even when the project uses another stack. It is faster to see and to change, and it keeps the conversation on the product instead of on the code.
 - Use the design system from stage 2. No new colors, fonts or components outside it without saying so.
+- When the summary lists more than one possible path, build two or three alternatives that differ in something that matters (flow structure, number of steps, what comes first), never in color or button position. At most three, and only at the Feature scale or in the critical journeys of a Product. The user chooses or combines parts; record the choice and the discarded alternatives with the reason.
 - Mobile first, with the desktop version in the same prototype.
 - Write real copy in the product's language. Review it for tone and clarity in that language. No lorem ipsum, no invented numbers, testimonials or claims; mark any copy that needs business confirmation.
 - Include the states that matter for the flow: empty, loading, error and success.
@@ -87,16 +92,19 @@ The approved prototype is the specification.
 - Keep the code portable: English identifiers, comments and commits; no AI branding; no lock-in to embedded platform services; secrets out of the code.
 - Change only what the screen needs and match the existing style of the codebase.
 - Any difference from the approved prototype is flagged, never introduced silently.
+- Write the test script by role (`templates/test-script.md`): before starting, main path with one numbered step per role and concrete values, cases that must not break, and the same path with the back-end ready. Every success criterion of the briefing becomes a step. The script tests what was built; it never asks for changes in the code.
+- Run the full script before asking for the gate. Fix what fails first.
 - Before the gate, check: it runs locally, the build and tests pass, the layout holds on phone and desktop, keyboard and focus work, and it matches the prototype.
 
-**Gate 3:** screenshots or a preview link, the list of changed files and how to test.
+**Gate 3:** screenshots or a preview link, the list of changed files and the test script, which the user follows to validate.
 
 ## Stage 5: Git
 
 - Use the branch agreed for the project. Read it from the project's `AGENTS.md` or `README`; if it is not written anywhere, ask once and record the answer there.
 - Never commit directly to the main or production branch.
 - Commits in English, one purpose each, with no AI trailer. Run the portability check before committing when it is installed.
-- Push and open a pull request with the briefing summary, what changed, screenshots, how to test and what is still pending.
+- Commit the test script next to the code it tests.
+- Push and open a pull request with the briefing summary, what changed, screenshots, the test script and what is still pending.
 
 ## Stage 6: Production (gate 4, only when requested)
 
