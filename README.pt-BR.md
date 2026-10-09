@@ -4,7 +4,7 @@
 
 Context Sprint é um método de desenvolvimento de produto que leva uma necessidade de negócio da reunião até interfaces prontas para publicar ou integrar ao sistema, construídas no design system e na stack da própria empresa, com uma aprovação humana entre cada etapa. Na prática, o protótipo navegável existe minutos depois do fim da reunião, e as telas ficam prontas no dia seguinte.
 
-A regra central do método: **a velocidade vem do contexto, não do modelo.** Uma IA que não conhece a empresa produz telas genéricas, que precisam ser refeitas. Uma IA que carrega o design system, o playbook da marca, o histórico de telas e o jeito de a empresa funcionar produz telas que já nascem no padrão. O método não depende do modelo ou da ferramenta de IA que o time usa.
+A regra central do método: **a velocidade e a qualidade vêm do contexto, bem mais do que do modelo.** Uma IA que não conhece a empresa produz telas genéricas, que precisam ser refeitas. Uma IA que carrega o design system, o playbook da marca, o histórico de telas e o jeito de a empresa funcionar produz telas que já nascem no padrão. O método não depende do modelo ou da ferramenta de IA que o time usa.
 
 [Read in English](README.md)
 
@@ -37,10 +37,12 @@ O Context Sprint foi pensado para a **evolução** de produtos e sistemas que j�
 
 | Caminho | Conteúdo |
 |---|---|
-| [`METHOD.md`](METHOD.md) | A especificação completa do método, versão 1.1 (em inglês) |
+| [`METHOD.md`](METHOD.md) | A especificação completa do método, versão 1.2 (em inglês) |
 | [`templates/context-layer/`](templates/context-layer/) | Estrutura inicial do Context Layer de uma empresa |
 | [`templates/briefing.md`](templates/briefing.md) | Modelo de briefing, preenchido a partir da transcrição da reunião |
 | [`templates/gates-checklist.md`](templates/gates-checklist.md) | O que cada Gate aprova e quem aprova |
+| [`templates/test-script.md`](templates/test-script.md) | Roteiro de teste por papel, entregue com toda construção |
+| [`templates/context-layer/07-governance.md`](templates/context-layer/07-governance.md) | Regra de governança: o que vai pro briefing, o que entra no Context Layer, o que não sai da reunião |
 | [`skills/`](skills/) | Implementação de referência em skills para agentes de IA |
 
 ## Autoria e citação
@@ -49,7 +51,7 @@ O Context Sprint foi criado e batizado por **Maike Robert** (São Paulo, Brasil)
 
 Se você usar ou adaptar o método, cite assim:
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.1.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.2.0). https://github.com/maikerobert/context-sprint
 
 ## Licença
 

@@ -1,6 +1,6 @@
 # Context Sprint: Method Definition
 
-Version 1.1.0, October 2026. Author: Maike Robert.
+Version 1.2.0, October 2026. Author: Maike Robert.
 
 ## 1. Definition
 
@@ -16,9 +16,11 @@ With AI agents, producing an artifact is no longer the slow part. The slow part 
 
 Context Sprint removes that gap by giving the AI the company's standards before it produces anything. The central rule of the method is:
 
-> **Speed comes from context, not from the model.**
+> **Speed and quality come from context, far more than from the model.**
 
-An agent with no context produces generic screens that have to be redone. An agent with the Context Layer produces screens that are born inside the standard, so the steps that existed only to bring them into the standard disappear. What remains is human judgment, concentrated at the gates.
+An agent with no context produces generic screens that have to be redone. An agent with the Context Layer produces screens that are born inside the standard, so the steps that existed only to bring them into the standard disappear. What remains is human judgment, concentrated at the gates. This is why the method does not depend on which AI the company uses: change the tool and the Context Layer still holds; remove the Context Layer and the best tool in the world will produce solutions that look just like the company next door's.
+
+The second premise is that **producing is cheap, validating is expensive**. With AI, generating one screen or a hundred takes about the same time. The real limit is how much people can validate well. So Context Sprint produces only what the next approval can evaluate.
 
 ## 3. Elements
 
@@ -36,6 +38,7 @@ Minimum content:
 | Screen history | Every existing screen, what it does, where it lives in the product |
 | Decisions | Product decisions already made and the reasons behind them |
 | Stack | Technologies, conventions, repository structure, how to run and test |
+| Governance | What may go into the briefing, what may enter the Context Layer and what stays in the meeting (see 3.6) |
 
 Building the Context Layer is **step zero** of the method. A company without a defined design system starts there, even if the first version is minimal. The Context Layer is never finished: every Sprint adds to it.
 
@@ -43,10 +46,10 @@ Building the Context Layer is **step zero** of the method. A company without a d
 
 Four steps, each closed by a gate.
 
-1. **Briefing.** The meeting with whoever brought the need is recorded and transcribed. The transcript, together with the Context Layer, becomes a one-screen briefing: problem, users, goal, scope, business rules, assumptions and open questions. The conductor leads the meeting already knowing the Context Layer, so the questions asked target the possible paths and the gaps of the request.
-2. **Prototype.** Minutes after the meeting, the agent produces a clickable prototype inside the design system, with real copy and the states that matter (empty, loading, error, success).
-3. **Build.** Once the prototype is approved, the agent rebuilds it in the product's stack, following the project's conventions, tested on the devices that matter, and versioned in the repository.
-4. **Handoff.** The approved interface is delivered to engineering for integration with the back-end, or published directly when no integration is needed.
+1. **Briefing.** The meeting with whoever brought the need is recorded and transcribed. The agent that reads the transcript, together with the Context Layer, writes the first version of the briefing by answering three questions: who suffers from the problem, and when; how it is done today, and what it costs; how we will know it is solved. The conductor separates the problem from the solution the requester brought. The requester fills in nothing: they confirm, correct or complete that first version at Gate 1. From the third question come the success metric (what must change, how it will be measured, from which starting point and when we will check) and the success criteria, which become the test script. At the same gate, requester and conductor set the scale of validation (see 3.5). The conductor leads the meeting already knowing the Context Layer, so the questions asked target the possible paths and the gaps of the request.
+2. **Prototype.** Minutes after the meeting, the agent produces a clickable prototype inside the design system, with real copy and the states that matter (empty, loading, error, success). When the problem admits more than one path, the conductor brings two or three alternatives to Gate 2, differing in something that matters: the structure of the flow, the number of steps, what appears first on the screen. Variations of color or button position do not count as alternatives. The user compares by navigating and chooses, or combines parts. When only one reasonable path exists, the conductor brings a single prototype. The goal is to keep the first idea from being approved just because it arrived first. At most three alternatives; only at the Feature scale and, at the Product scale, in the critical journeys. Discarded alternatives go into the decision log of the Context Layer, with the reason.
+3. **Build.** Once the prototype is approved, the agent rebuilds it in the product's stack, following the project's conventions, tested on the devices that matter, and versioned in the repository. The build ships with a test script by role (see 3.4), which the conductor runs before asking for approval.
+4. **Handoff.** The approved interface is delivered to engineering for integration with the back-end, or published directly when no integration is needed. The test script goes with it, in the repository and in the pull request.
 
 ### 3.3 Gates
 
@@ -54,31 +57,61 @@ Mandatory human approvals between steps.
 
 | Gate | What is approved | Who approves |
 |---|---|---|
-| Gate 1, Briefing | The understanding of the need | Requester |
-| Gate 2, Prototype | The solution, navigated as a real screen | User (the person who will use it every day) |
-| Gate 3, Build | The interface running in the real stack | User, with the conductor |
+| Gate 1, Briefing | The problem, the success metric and the scale of validation | Requester |
+| Gate 2, Prototype | The solution, navigated as a real screen, chosen among the alternatives when there are any | User (the person who will use it every day) |
+| Gate 3, Build | The interface running in the real stack, validated by following the test script | User, with the conductor |
 | Gate 4, Handoff | Readiness for integration or launch | Engineering |
 
 No step starts before the previous gate is passed. Gate 2 is where the most valuable input appears: ideas that only show up when people see and click the screen, which the AI does not capture on its own. They are incorporated before moving on.
+
+### 3.4 Test script by role
+
+Every build is delivered with a short test script, written by role, that turns the success criteria of the briefing into concrete steps. The conductor runs the script before asking for Gate 3; the user validates in a few minutes by following the same steps. Since the criteria are written at Gate 1, everyone knows from the start how the delivery will be judged.
+
+The script has four parts:
+
+1. **Before starting.** How to run it, with which user or permission, and how to switch roles.
+2. **Main path.** One numbered step per role, in the order the work really happens. Each step says who tests, what they do (with concrete values) and what must appear, with the exact texts and numbers of the screen. Example: marketing releases the budget, the manager requests it, the director sees the balance and approves, the manager sees it approved and reports, marketing sees everything.
+3. **Cases that must not break.** Rejection, required fields, what each role must not see, empty states, value and date formats, phone.
+4. **With the back-end ready.** The same path with real users and what changes (notifications, integrations).
+
+Two rules. The script tests what was built; it does not ask for changes in the code. And it travels with the delivery: in the repository and in the pull request. It worked when the requester validates in fifteen minutes or less and the team finds the errors before the validation, not during it.
+
+### 3.5 Scale of validation
+
+At Gate 1, the requester and the conductor define the size of the validation the need requires. Production time does not enter this account, because with AI it is short in every case.
+
+| Scale | What it is | How validation happens |
+|---|---|---|
+| Adjustment | A change to a screen or flow that already exists | One cycle, usually the same day. One prototype is enough |
+| Feature | A new screen or flow inside an existing product | The everyday user validates, in one or a few cycles |
+| Product | A new application or system, with dozens or hundreds of screens | Validation is split into journeys. Each journey goes through its own Gate 2, with the users of that journey, in a sequence agreed at Gate 1 |
+
+At the Product scale, the AI can generate every screen at once, but they are validated journey by journey. So nobody receives a hundred screens to approve in one go, and every approval remains a real one. The rule is to produce no more than the next approval can evaluate.
+
+### 3.6 Governance
+
+Not everything said in a meeting may reach the people who validate the screen. Before the first Sprint, the company sets the macro rule: which information may go into the briefing, which may enter the Context Layer and which stays in the meeting (for example: names of people under evaluation, compensation figures, decisions not yet announced). The agent that reads the transcript applies this rule when classifying each piece of information, and the conductor checks it at Gate 1. The rule is set once and reviewed at the same cadence as the Context Layer, not at every meeting.
 
 ## 4. Roles
 
 | Role | Responsibility |
 |---|---|
-| Conductor | A product person who joins the meeting, operates the agent and takes the work through the gates. One conductor covers what used to require an analyst, a UX designer and a front-end developer. |
-| Requester | The person or area that brought the need. |
-| User | The person who will use the solution every day. Approves gates 2 and 3. |
+| Conductor | A product person who joins the meeting, operates the agent and takes the work through the gates. Runs the test script before asking for Gate 3. One conductor covers what used to require an analyst, a UX designer and a front-end developer. |
+| Requester | The person or area that brought the need. Confirms the briefing and the success metric at Gate 1. |
+| User | The person who will use the solution every day. Approves gates 2 and 3, at gate 3 by following the test script. |
 | Engineering | Receives the handoff and integrates it with the system. |
-| Context keeper | Keeps the Context Layer current after every Sprint: new screens enter the screen history, new decisions enter the decision log. |
+| Context keeper | Keeps the Context Layer current after every Sprint: new screens enter the screen history, new decisions enter the decision log, and the governance rule is reviewed at the same cadence. |
 
 ## 5. Artifacts
 
 1. Meeting transcript.
-2. Briefing (one screen).
-3. Clickable prototype.
+2. Briefing (one screen), with success metric, scale and success criteria.
+3. Clickable prototype, or two to three alternatives when the problem admits more than one path.
 4. Gate log: what was approved, by whom, when, and what changed.
-5. Interface in the repository.
-6. Context Layer update.
+5. Test script by role, derived from the success criteria of the briefing.
+6. Interface in the repository.
+7. Context Layer update.
 
 ## 6. Continuous practice
 
@@ -115,6 +148,8 @@ Back-end, data and infrastructure work keep the engineering team's own process. 
 
 **Do not use Context Sprint for creation from scratch:** a new product, a new brand, a new design language. When no standard exists, exploratory design is the work itself. Context Sprint comes in afterwards, once the new standard exists and becomes part of the Context Layer.
 
+The Product scale (a new system or application with dozens of screens) fits the method when the standard already exists: design system, playbook and stack defined. What is new is the system, not the standard. In that case validation is split into journeys, as described in the scale of validation. When the standard also has to be invented, it remains design work, and the method comes in afterwards.
+
 This boundary also answers the most common objection, that the method replaces design. It replaces the repeated adaptation of screens to a standard that already exists. It depends on the people who create and maintain that standard.
 
 ## 8. Comparison
@@ -146,10 +181,10 @@ Before, the same path took weeks: scheduling the wireframe in a sprint, validati
 
 ## 11. Versioning
 
-This document follows semantic versioning. Changes are recorded in [CHANGELOG.md](CHANGELOG.md). Version 1.0.0 was the first public definition of the method; 1.1.0 adds its use as a continuous practice.
+This document follows semantic versioning. Changes are recorded in [CHANGELOG.md](CHANGELOG.md). Version 1.0.0 was the first public definition of the method; 1.1.0 adds its use as a continuous practice; 1.2.0 adds the success metric, the scale of validation, prototype alternatives, the test script by role and governance.
 
 ## Citation
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.1.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.2.0). https://github.com/maikerobert/context-sprint
 
 Licensed under [CC BY 4.0](LICENSE).

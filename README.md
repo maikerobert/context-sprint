@@ -4,7 +4,7 @@
 
 Context Sprint is a product development method that takes a business need from a meeting to production-ready interfaces, built in the company's own design system and stack, with a human approval gate between every step. In practice, a clickable prototype exists minutes after the meeting ends and the screens are ready to publish or integrate the next day.
 
-The central rule of the method: **speed comes from context, not from the model.** An AI with no knowledge of the company produces generic screens that have to be redone. An AI that carries the company's design system, brand playbook, screen history and way of working produces screens that are born inside the standard. The method does not depend on which AI model or tool a team uses.
+The central rule of the method: **speed and quality come from context, far more than from the model.** An AI with no knowledge of the company produces generic screens that have to be redone. An AI that carries the company's design system, brand playbook, screen history and way of working produces screens that are born inside the standard. The method does not depend on which AI model or tool a team uses.
 
 [Leia em português](README.pt-BR.md)
 
@@ -37,10 +37,12 @@ Context Sprint is designed for **evolving** existing products and systems: new f
 
 | Path | Contents |
 |---|---|
-| [`METHOD.md`](METHOD.md) | The full method specification, version 1.1 |
+| [`METHOD.md`](METHOD.md) | The full method specification, version 1.2 |
 | [`templates/context-layer/`](templates/context-layer/) | A starting structure for a company's Context Layer |
 | [`templates/briefing.md`](templates/briefing.md) | Briefing template, filled from the meeting transcript |
 | [`templates/gates-checklist.md`](templates/gates-checklist.md) | What each gate approves and who approves it |
+| [`templates/test-script.md`](templates/test-script.md) | Test script by role, delivered with every build |
+| [`templates/context-layer/07-governance.md`](templates/context-layer/07-governance.md) | Governance rule: what may go into the briefing, what enters the Context Layer, what stays in the meeting |
 | [`skills/context-sprint/`](skills/context-sprint/) | Reference implementation: an agent skill that runs the method and stops at every gate |
 | [`skills/brief-to-production-standard/`](skills/brief-to-production-standard/) | Reference implementation of the Prototype and Build steps |
 
@@ -52,7 +54,7 @@ Context Sprint was created and named by **Maike Robert** (São Paulo, Brazil) in
 
 If you use or adapt the method, please credit it as:
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.1.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.2.0). https://github.com/maikerobert/context-sprint
 
 GitHub's "Cite this repository" button provides the same reference in other formats.
 
