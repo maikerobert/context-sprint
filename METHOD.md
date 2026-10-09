@@ -185,6 +185,6 @@ This document follows semantic versioning. Changes are recorded in [CHANGELOG.md
 
 ## Citation
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.2.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Version 1.2.0). Zenodo. https://doi.org/10.5281/zenodo.23252178
 
 Licensed under [CC BY 4.0](LICENSE).

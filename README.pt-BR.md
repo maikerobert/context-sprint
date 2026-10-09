@@ -1,5 +1,7 @@
 # Context Sprint
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23252178.svg)](https://doi.org/10.5281/zenodo.23252178)
+
 **Context Sprint: a IA com o contexto inteiro da empresa, e pessoas aprovando em cada etapa.**
 
 Context Sprint é um método de desenvolvimento de produto que leva uma necessidade de negócio da reunião até interfaces prontas para publicar ou integrar ao sistema, construídas no design system e na stack da própria empresa, com uma aprovação humana entre cada etapa. Na prática, o protótipo navegável existe minutos depois do fim da reunião, e as telas ficam prontas no dia seguinte.
@@ -51,7 +53,9 @@ O Context Sprint foi criado e batizado por **Maike Robert** (São Paulo, Brasil)
 
 Se você usar ou adaptar o método, cite assim:
 
-> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.2.0). https://github.com/maikerobert/context-sprint
+> Robert, M. (2026). *Context Sprint: Method Definition* (Versão 1.2.0). Zenodo. https://doi.org/10.5281/zenodo.23252178
+
+O DOI acima aponta sempre para a versão mais recente. Cada versão também tem o seu próprio DOI (1.2.0: [10.5281/zenodo.23252179](https://doi.org/10.5281/zenodo.23252179)).
 
 ## Licença
 
